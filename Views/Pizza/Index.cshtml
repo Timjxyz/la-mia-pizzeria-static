@@ -12,6 +12,7 @@
     pizzas.Add(new Pizza("Tonno e Cipolla", "/img/pizza-buffala-prosciutto.jpg", "Pomodoro, Mozzarella, Tonno, Cipolla",7));
     
 }
+
 <link rel="stylesheet" href="~/css/ms-site.css" asp-append-version="true" />
 <div class="ms-bg">
 
@@ -21,18 +22,24 @@
     </div>
 
 
+
     <div class="row  mb-5 g-4 ">
         @foreach(Pizza pizza in pizzas)
         {
             <div class="col-12 col-sm-6 col-xl-4">
-            <div class="overlay">
-                <h3 class="mb-2">@pizza.Name</h3>
-                <img src="@pizza.Img" class="img-fluid rounded  bg-dark" alt="">
             
+                <div class="card ms-height">
+                  <img class="card-img-top" src="@pizza.Img" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">@pizza.Name</h5>
+                    <p class="card-text">@pizza.Description</p>
+                     <p class="card-text">Prezzo: @pizza.Price €</p>
+                    <button  type="button" class="btn btn-success">Aggiungi</button>
+                    <button  type="button" class="btn btn-danger">Rimuovi</button>
+                  </div>
+                </div>
             </div>
-            <p class="mt-2">@pizza.Description</p>
-            <div> <a href="#" class="btn btn-primary ">Prezzo: @pizza.Price €</a> </div>
-        </div>
         }
     </div>
+
 </div>
