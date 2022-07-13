@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Lista Pizze";
+}
+
+@{
+    List<Pizza> pizzas = new List<Pizza>();
+    pizzas.Add(new Post("Bufalina", "/img/pizza-buffala-prosciutto.jpg", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, repellendus vel necessit",15));
+    
+}
+
+<div class="text-center">
+    <h1>Pizza</h1>
+   <p>Lalallalalalallala</p>
+</div>
+
+
+<div class="row  mb-5 g-4 ">
+    @foreach(Pizza pizza in pizzas)
+    {
+        <div class="col-12 col-sm-6 col-xl-4">
+            <h1>@pizza.Title</h1>
+        <div class="overlay">
+            <img src="@pizza.Img" class="img-fluid rounded  bg-dark" alt="">
+            <i class="fas fa-plus press-add"></i>
+        </div>
+        <p>@pizza.Description</p>
+        <span>@pizza.Price</span>
+    </div>
+    }
+</div>
