@@ -4,27 +4,35 @@
 
 @{
     List<Pizza> pizzas = new List<Pizza>();
-    pizzas.Add(new Post("Bufalina", "/img/pizza-buffala-prosciutto.jpg", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, repellendus vel necessit",15));
+    pizzas.Add(new Pizza("Bufalina", "/img/pizza-buffala-prosciutto.jpg", "Pomodoro, Mozzarella di Bufala Campana DOP, Prosciutto Crudo di San Daniele",10));
+    pizzas.Add(new Pizza("Triveneto", "/img/pizza-con-pancetta.jpg", "Pomodoro, Mozzarella, Pancetta, Radicchio di Treviso",9.50));
+    pizzas.Add(new Pizza("Diavola", "/img/pizza-Diavola.jpg", "Pomodoro, Mozzarella, Salamino Piccante",8.50));
+    pizzas.Add(new Pizza("Estate", "/img/pizza-estate.jpg", "Pomodoro, Mozzarella, Ruccola, Pomodorini, Grana",12));
+    pizzas.Add(new Pizza("Mortadella, Pistacchio, Stracciatella", "/img/pizza-mortadella.jpg", "Pomodoro, Mozzarella, Mortadella, Pistacchio di Bronte, Stracciatella",14));
+    pizzas.Add(new Pizza("Tonno e Cipolla", "/img/pizza-buffala-prosciutto.jpg", "Pomodoro, Mozzarella, Tonno, Cipolla",7));
     
 }
+<link rel="stylesheet" href="~/css/ms-site.css" asp-append-version="true" />
+<div class="ms-bg">
 
-<div class="text-center">
-    <h1>Pizza</h1>
-   <p>Lalallalalalallala</p>
-</div>
-
-
-<div class="row  mb-5 g-4 ">
-    @foreach(Pizza pizza in pizzas)
-    {
-        <div class="col-12 col-sm-6 col-xl-4">
-            <h1>@pizza.Title</h1>
-        <div class="overlay">
-            <img src="@pizza.Img" class="img-fluid rounded  bg-dark" alt="">
-            <i class="fas fa-plus press-add"></i>
-        </div>
-        <p>@pizza.Description</p>
-        <span>@pizza.Price</span>
+    <div class="text-center my-5">
+        <h1 class="text-white">Menù pizze</h1>
+       <h3  class="text-white">La nostra selezione di pizze</h3>
     </div>
-    }
+
+
+    <div class="row  mb-5 g-4 ">
+        @foreach(Pizza pizza in pizzas)
+        {
+            <div class="col-12 col-sm-6 col-xl-4">
+            <div class="overlay">
+                <h3 class="mb-2">@pizza.Name</h3>
+                <img src="@pizza.Img" class="img-fluid rounded  bg-dark" alt="">
+            
+            </div>
+            <p class="mt-2">@pizza.Description</p>
+            <div> <a href="#" class="btn btn-primary ">Prezzo: @pizza.Price €</a> </div>
+        </div>
+        }
+    </div>
 </div>

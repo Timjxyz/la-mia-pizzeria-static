@@ -5,8 +5,8 @@
         public string Name { get; set; }
         public string Description { get; set; }
         public string Img { get; set; }
-        public int Price { get; set; }
-        public Pizza(string Name, string Img, string Description, int price)
+        public double Price { get; set; }
+        public Pizza(string Name, string Img, string Description, double price)
         {
             this.Name = Name;
             this.Img = Img;
